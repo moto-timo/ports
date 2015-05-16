@@ -1,0 +1,31 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4; truncate-lines: t -*- vim:fenc=utf-8:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+
+fetch.type          git
+git.url             https://github.com/ungureanuvladvictor/BBBlfs.git
+git.branch          9a25b4d6d039a76264c81d4b566f63d7448ab334
+
+name                beagleboot
+epoch		    1
+version             0.1.0
+revision            1
+set branch          beagleboot
+categories          devel
+license             GPL-2
+maintainers         vvu moto-timo
+description         Beagle Bone Black Linux Flash System
+long_description    This project provides a way to flash a BeagleBone Black via USB from a Linux \
+                    machine. The project was developed during Google Summer of Code '13.
+
+homepage            http://ungureanuvladvictor.github.io/BBBlfs/
+
+configure.cmd       ./autogen.sh && ./configure
+
+installs_libs       no
+depends_build       port:libusb
+
+livecheck.type      ${homepage}
+
+
